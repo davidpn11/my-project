@@ -1,0 +1,114 @@
+<!--------------Content----------------->
+		<div class="col-md-8 blog-single" ng-controller="ContentController as conteudo" ng-init= "atual=conteudo.posts[0]">
+			<div class="bs-meta">
+				<span class="bs-cat">{{atual.category}}</span>
+				<span class="bs-comments"><a href="#"><i class="fa fa-comments-o"></i> {{atual.comments.length}} Comentários</a> </span>
+			</div>
+			<h3>{{atual.title}}</h3>
+			<div class="row">
+				<div class="col-md-3 bs-aside">
+					<h6><span>{{atual.author}}</span></h6>
+					<div class="sep1"></div>
+					<div class="space10"></div>
+					<div class="rp-date">
+						<span>{{atual.mes}}</span>
+						{{atual.dia}}
+						<span><em>/</em> {{atual.ano}}</span>
+					</div>
+					<div class="space30"></div>
+					<div class="sep1"></div>
+					<div class="space20"></div>
+					
+					<span class="bsa-social">
+					<a href="#"><i class="fa fa-facebook"></i></a>
+					<a href="#"><i class="fa fa-twitter"></i></a>
+					<a href="#"><i class="fa fa-plus"></i></a>
+					</span>
+				</div>
+				
+				<div class="col-md-9" >
+                    <p> {{atual.body}}</p>
+                    
+                    <div class="img-w-caption">
+						<img ng-src="{{atual.image}}" class="img-responsive"alt=""/>                     
+						<span>{{atual.imageSpan}}</span>
+					</div>
+					
+					
+					<div class="bs-tags">
+						<span>Categoria : <a href="#">{{atual.category}}</a></span>
+						<!--<span>Tags : <a href="#">Basket,</a> <a href="#">Dunk,</a> <a href="#">Jump</a></span>-->
+					</div>
+					
+					
+					
+					</div>
+			</div>
+			
+			
+			<!-- Comments --> 
+			<div class="comments-wrap">
+				<div id="tabwrap">
+					<ul id="tabs">
+						<li class="current"><a href="#comments">{{atual.comments.length}} Comentários</a></li>
+				    </ul>
+					
+					<div id="content">
+						<div id="comments" class="current">
+							<ul class="comments" ng-repeat="comentario in atual.comments">
+								<li>
+									<div class="c-img"><img src="images/profile.png" width="80px" alt=""/></div>
+									<div class="comment-inner" >
+										<h6><span>{{comentario.nome}}</span> </h6>
+										
+								<p>{{comentario.body}}</p>	
+									</div>
+								</li>
+								
+								
+                        </ul>
+        <form name="commentForm" ng-controller="CommentController as commentCtrl" ng-submit="commentCtrl.addComment(atual)">
+
+
+                  <!--  Review Form -->
+
+                  <fieldset class="form-group">
+                    <input ng-model="commentCtrl.comentario.nome" type="name" class="form-control" placeholder="Nome" title="commentName">
+                  </fieldset>
+                  <fieldset class="form-group">
+                      <textarea ng-model="commentCtrl.comentario.body" class="form-control" placeholder="Comentário" title="commentBody"></textarea>
+                  </fieldset>
+                  <fieldset class="form-group">
+                    <input type="submit" class="btn btn-primary pull-right" value="Enviar Comentário" />
+                  </fieldset>
+                </form>
+                            
+						</div>
+						</div>
+				</div>
+                 
+          
+                
+			</div>
+		</div>
+	
+		<!-- Sidebar -->
+		<aside class="col-md-4">
+		
+			<!-- Popular News -->
+			<div class="side-widget p-news" ng-controller="popularController as popular">
+				<h5><span>Mais comentadas</span></h5>
+				<div class="sw-inner" >
+					<ul>
+						<li ng-repeat="post in popular.posts | limitTo: 5">
+							<img ng-src={{post.image}} alt=""/>
+							<div class="pn-info">
+								<span>{{post.category}}</span>
+								<h4><a href={{post.link}}>{{post.title}}</a></h4>
+							</div>
+						</li>
+						
+					</ul>
+				</div>
+			</div>
+        </aside>

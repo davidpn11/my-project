@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html ng-app="news">
+
+<head>
+
+	<!-- Meta -->
+	<meta charset="utf-8">
+	<meta name="keywords" content="FAKE" />
+	<meta name="description" content="Site de notícias forjadas">
+	<meta name="author" content="David Pena e Gustavo Junqueira">
+
+    <title>Fake.com</title>
+
+	<!-- Mobile Metas -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	
+	<!-- Google Fonts & Fontawesome -->
+	<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+	<link href='http://fonts.googleapis.com/css?family=Playfair+Display:400,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Josefin+Sans:400,100,300,300italic,100italic,400italic,600,600italic,700,700italic' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Oswald:400,700,300' rel='stylesheet' type='text/css'>
+
+	<!-- CSS -->
+    <link rel="stylesheet" href="css/bootstrap.css">
+	<link rel="stylesheet" href="css/style.css">
+
+    
+</head>
+<body>
+
+<!-- Topbar -->
+<div class="top-bar container">
+	<div class="row">
+		<div class="col-md-6" ng-controller="DateController as data">
+			<ul class="tb-left">
+                <!--Pegar data do sistema-->
+				<li class="tbl-date">Hoje é: <span></span></li>
+				<li class="tbl-temp"><i class="fa fa-sun-o"></i>32 C</li>
+				
+			</ul>
+		</div>
+		<div class="col-md-6">
+			<ul class="tb-right">
+				<li class="tbr-social">
+					<span>
+					<a href="#" class="fa fa-facebook"></a>
+					<a href="#" class="fa fa-twitter"></a>
+					<a href="#" class="fa fa-google-plus"></a>
+					
+					</span>
+				</li>
+				
+			</ul>
+		</div>
+	</div>
+</div>
+
+<div class="container wrapper">
+
+	<!-- Header -->
+	<header>
+		<div class="col-md-12">
+			<div class="row">
+			
+				<!-- Navigation -->
+				<div class="col-md-12">
+					<div class="menu-trigger"><i class="fa fa-align-justify"></i> Menu</div>
+					<nav ng-controller="CategoryController as categoriaCtrl">
+						<ul>
+							
+							<li><a href="/category">Cultura</a></li>
+                            <li><a href="/category">Esporte</a></li>
+                            <li><a href="/category">Entretenimento</a></li>
+							<li><a href="/category">Mundo</a></li>
+							<li><a href="/category" ng-click="setCat()">Sem categoria</a></li>
+							<li><a href="/category" ng-click="setCat()">Tecnologia</a></li>
+							<li><a href="/category">Viagem</a></li>
+							<li><a href="/contact">Contato</a></li>
+							
+						</ul>
+					</nav>
+				
+				
+				</div>
+			</div>
+		</div>
+	</header>
+	
+	<div class="header">
+		<div class="col-md-12">
+			<div class="col-md-12">
+				<!-- Logo -->
+				<div class="col-md-4 logo">
+					<h1><a href="/">Fake.com</a></h1>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Main Content -->
+	<div class="main-content container">
+        
+        <ng-view></ng-view>
+	</div>
+	
+	
+
+	
+	
+	
+	<!-- Footer - Fixed -->
+	<div class="footer-fixed">
+		<div class="row">
+			<div class="col-md-6">
+				<ul class="footer-nav">
+					<li><a href="#">Início</a></li>
+					<li><a href="#">Categorias</a></li>
+					<li><a href="#">Contato</a></li>
+					
+				</ul>
+			</div>
+			<div class="col-md-6">
+				<p class="copy1"><a href="#" class="fa fa-arrow-up"></a></p>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="clearfix space30"></div>
+
+<!-- Javascript -->
+
+<script src="javascripts/bootstrap.min.js"></script>
+
+<script type="text/javascript" src="js/angular.min.js"></script>
+<script type="text/javascript" src="js/app.js"></script>
+<script type="text/javascript" src="js/angular-route.js"></script>
+<!--<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.28/angular-resource.min.js"></script>-->
+
+<!--<script src="http://maps.google.com/maps/api/js?sensor=false"></script>
+<script type="text/javascript" src="javascripts/gmaps.js"></script>-->
+</body>
+</html>
+
+  

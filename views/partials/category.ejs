@@ -1,0 +1,54 @@
+<!-- Category Content -->
+		<div class="col-md-8 blog-single">
+			<div class="bs-meta">
+				<span class="bs-cat">{{categoriaNome}}</span>
+				
+			</div>
+			
+			
+			<div class="related-posts related-posts-cat" ng-repeat="atual in categoriaCtrl.postsCategoria" >
+				<ul>
+					<li ng-if="atual.category == categoriaNome">
+						<div class="col-md-3">
+							<div class="rp-date">
+								<span>{{atual.mes}}</span>
+								{{atual.dia}}
+								<span><em>/</em> {{atual.ano}}</span>
+							</div>
+						</div>
+						<div class="col-md-9">
+							<img ng-src="{{atual.image}}" class="img-responsive"alt=""/>     
+							<div class="rp-inner">
+								<span class="rp-cat">{{atual.category}}</span>
+								<h4><a href="single_post.html">{{atual.title}}</a></h4>
+								<a href="#" class="rp-more">Read more  <em>&#8594;</em></a>
+							</div>
+						</div>
+					</li>					
+				</ul>
+			</div>
+			
+			
+		</div>
+		
+		<!-- Sidebar -->
+		<aside class="col-md-4">
+		
+			<!-- Popular News -->
+			<div class="side-widget p-news" ng-controller="popularController as popular">
+				<h5><span>Mais comentadas</span></h5>
+				<div class="sw-inner" >
+					<ul>
+						<li ng-repeat="post in popular.posts | limitTo: 5">
+							<img ng-src={{post.image}} alt=""/>
+							<div class="pn-info">
+								<span>{{post.category}}</span>
+								<h4><a href={{post.link}}>{{post.title}}</a></h4>
+							</div>
+						</li>
+						
+					</ul>
+				</div>
+			</div>
+			
+			</aside>
