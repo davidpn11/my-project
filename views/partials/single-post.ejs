@@ -1,19 +1,19 @@
-<!--------------Content----------------->
-		<div class="col-md-8 blog-single" ng-controller="ContentController as conteudo" ng-init= "atual=conteudo.posts[0]">
+<!-- CONTENT -->
+		<div class="col-md-8 blog-single" ng-controller="ContentController">
 			<div class="bs-meta">
-				<span class="bs-cat">{{atual.category}}</span>
-				<span class="bs-comments"><a href="#"><i class="fa fa-comments-o"></i> {{atual.comments.length}} Comentários</a> </span>
+				<span class="bs-cat">{{post.category}}</span>
+			<!--	<span class="bs-comments"><a href="#"><i class="fa fa-comments-o"></i> {{post.comments.length}} Comentários</a> </span> -->
 			</div>
-			<h3>{{atual.title}}</h3>
+			<h3>{{post.title}}</h3>
 			<div class="row">
 				<div class="col-md-3 bs-aside">
-					<h6><span>{{atual.author}}</span></h6>
+					<h6><span>{{post.author}}</span></h6>
 					<div class="sep1"></div>
 					<div class="space10"></div>
 					<div class="rp-date">
-						<span>{{atual.mes}}</span>
-						{{atual.dia}}
-						<span><em>/</em> {{atual.ano}}</span>
+						<span>{{post.mes}}</span>
+						{{post.dia}}
+						<span><em>/</em> {{post.ano}}</span>
 					</div>
 					<div class="space30"></div>
 					<div class="sep1"></div>
@@ -27,16 +27,16 @@
 				</div>
 				
 				<div class="col-md-9" >
-                    <p> {{atual.body}}</p>
+                    <p> {{post.body}}</p>
                     
                     <div class="img-w-caption">
-						<img ng-src="{{atual.image}}" class="img-responsive"alt=""/>                     
-						<span>{{atual.imageSpan}}</span>
+						<img ng-src="{{post.image}}" class="img-responsive"alt=""/>                     
+						<span>{{post.imageSpan}}</span>
 					</div>
 					
 					
 					<div class="bs-tags">
-						<span>Categoria : <a href="#">{{atual.category}}</a></span>
+						<span>Categoria : <a href="#">{{post.category}}</a></span>
 						<!--<span>Tags : <a href="#">Basket,</a> <a href="#">Dunk,</a> <a href="#">Jump</a></span>-->
 					</div>
 					
@@ -46,11 +46,11 @@
 			</div>
 			
 			
-			<!-- Comments --> 
+			<!-- Comments --> <!--
 			<div class="comments-wrap">
 				<div id="tabwrap">
 					<ul id="tabs">
-						<li class="current"><a href="#comments">{{atual.comments.length}} Comentários</a></li>
+						<li class="current"><a href="#comments">{{post.comments.length}} Comentários</a></li>
 				    </ul>
 					
 					<div id="content">
@@ -66,12 +66,12 @@
 								</li>
 								
 								
-                        </ul>
+                        </ul> <!--
         <form name="commentForm" ng-controller="CommentController as commentCtrl" ng-submit="commentCtrl.addComment(atual)">
 
 
                   <!--  Review Form -->
-
+<!--
                   <fieldset class="form-group">
                     <input ng-model="commentCtrl.comentario.nome" type="name" class="form-control" placeholder="Nome" title="commentName">
                   </fieldset>
@@ -92,10 +92,10 @@
 			</div>
 		</div>
 	
-		<!-- Sidebar -->
+		<!-- Sidebar --> <!--
 		<aside class="col-md-4">
 		
-			<!-- Popular News -->
+			<!-- Popular News --><!--
 			<div class="side-widget p-news" ng-controller="popularController as popular">
 				<h5><span>Mais comentadas</span></h5>
 				<div class="sw-inner" >
@@ -111,4 +111,4 @@
 					</ul>
 				</div>
 			</div>
-        </aside>
+        </aside>-->

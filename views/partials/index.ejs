@@ -36,7 +36,7 @@
 									<div class="fn-thumb" ng-repeat="post in destaque.posts |limitTo:2" >
 										<img ng-src={{post.image}} class="img-responsive" alt=""/>
 										<div class="fn-meta">{{post.category}}   <span>{{post.comments.length}} <i class="fa fa-comments"></i></span></div>
-                                    <h4><a href='/single-post'>{{post.title}}</a></h4>
+                                    <h4><a href='/single-post/{{post.id}}'>{{post.title}}</a></h4>
 									<em>Posted on {{post.date}}</em>
 									<p>{{post.body | limitTo: 140}}...</p>
 									</div>	

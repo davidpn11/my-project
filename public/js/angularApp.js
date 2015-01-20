@@ -20,7 +20,7 @@
         
       })
     
-     .when('/single-post', {
+     .when('/single-post/:id', {
         templateUrl: 'partials/single-post',
         controller: 'ContentController',
         controllerAs: 'conteudo'
@@ -41,9 +41,19 @@
     });
 
 
-    app.controller('ContentController', function (){
+    app.controller('ContentController',['$scope','$http','$routeParams', function ($scope, $http, $routeParams){
        
+    $http.get('/api/post/' + $routeParams.id).success(function(data) {
+          console.log(data.post.title);
+          
+
+          $scope.post = data.post;
+
     });
+
+    }]);
+
+ 
 
 /*
  console.log($scope.products[0].subtitle);
@@ -105,13 +115,15 @@
     }]);
     
     app.controller('popularController', ['$filter', function ($filter){
-        var orderBy = $filter('orderBy');
+     /*   var orderBy = $filter('orderBy');
         this.posts = singlePost;
         this.posts = orderBy(this.posts, '-comments.length', false);
-        
+       */ 
     }]);
+
 
     
     
-    
 })();
+
+

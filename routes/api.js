@@ -127,6 +127,7 @@ exports.posts = function (req, res) {
 };
 
 exports.post = function (req, res) {
+  console.log('func post');
   var id = req.params.id;
   if (id >= 0 && id < data.posts.length) {
     res.json({
@@ -136,7 +137,7 @@ exports.post = function (req, res) {
     res.json(false);
   }
 };
-
+/*
 // POST
 exports.addPost = function (req, res) {
   data.posts.push(req.body);
@@ -165,4 +166,4 @@ exports.deletePost = function (req, res) {
   } else {
     res.json(false);
   }
-};
+};*/
