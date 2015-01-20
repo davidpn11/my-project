@@ -1,14 +1,14 @@
 <!-- Category Content -->
-		<div class="col-md-8 blog-single">
+		<div class="col-md-8 blog-single" ng-controller="CategoryController as ctrl">
 			<div class="bs-meta">
-				<span class="bs-cat">{{categoriaNome}}</span>
+				<span class="bs-cat">{{categoria}}</span>
 				
 			</div>
 			
 			
-			<div class="related-posts related-posts-cat" ng-repeat="atual in categoriaCtrl.postsCategoria" >
+			<div class="related-posts related-posts-cat" ng-repeat="atual in products" >
 				<ul>
-					<li ng-if="atual.category == categoriaNome">
+					<li ng-if="atual.category == categoria">
 						<div class="col-md-3">
 							<div class="rp-date">
 								<span>{{atual.mes}}</span>
