@@ -58,11 +58,11 @@
     
     app.controller('CategoryController',['$scope', '$http', function($scope,$http){
        
-       $scope.categoria = 'Tecnologia';
+       $scope.categoria = 'Esporte';
        
 
         $http.get('/api/posts').success(function(data){            
-            $scope.products = data.posts;
+            $scope.postagens = data.posts;
   //          console.log($scope.products[0].title);
         });
        /* console.log('nada');
@@ -90,10 +90,16 @@
         };
     });
     
-    app.controller('viewsController', ['$filter', function ($filter){
+    app.controller('viewsController', ['$filter', '$http', function($filter,$http){
         var orderBy = $filter('orderBy');
-        this.posts = singlePost;
-        this.posts = orderBy(this.posts, '-views', false);
+        var destaque = this;
+        destaque.posts = [];
+        $http.get('/api/posts').success(function(data){            
+  
+            destaque.posts = data.posts;
+            destaque.posts = orderBy(destaque.posts,'-views', false);
+        });
+
         
         
     }]);
