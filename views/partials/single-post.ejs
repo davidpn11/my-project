@@ -1,17 +1,17 @@
 <!-- CONTENT -->
 		<div class="col-md-8 blog-single" ng-controller="ContentController">
 			<div class="bs-meta">
-				<span class="bs-cat">{{post.category}}</span>
+				<span class="bs-cat">{{post[identidade].category}}</span>
 			<!--	<span class="bs-comments"><a href="#"><i class="fa fa-comments-o"></i> {{post.comments.length}} Comentários</a> </span> -->
 			</div>
-			<h3>{{post.title}}</h3>
+			<h3>{{post[identidade].title}}</h3>
 			<div class="row">
 				<div class="col-md-3 bs-aside">
-					<h6><span>{{post.author}}</span></h6>
+					<h6><span>{{post[identidade].author}}</span></h6>
 					<div class="sep1"></div>
 					<div class="space10"></div>
 					<div class="rp-date">
-						<span>{{post.mes}}</span>
+						<span>{{post[identidade].mes}}</span>
 						{{post.dia}}
 						<span><em>/</em> {{post.ano}}</span>
 					</div>

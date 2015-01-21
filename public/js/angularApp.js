@@ -4,24 +4,24 @@
     app.config(['$routeProvider', '$locationProvider', function ($routeProvider, $locationProvider) {
     $routeProvider
       .when('/', {
-        templateUrl: 'partials/index',
+        templateUrl: '/partials/index',
         controller: 'ContentController',
         controllerAs: 'content'
       })
         
-     .when('/category', {
-        templateUrl: 'partials/category',
+     .when('/category/:cat', {
+        templateUrl: '/partials/category',
         controller: 'CategoryController',
         controllerAs: 'categoriaCtrl'
       })
     
      .when('/contact', {
-        templateUrl: 'partials/contact',
+        templateUrl: '/partials/contact',
         
       })
     
      .when('/single-post/:id', {
-        templateUrl: 'partials/single-post',
+        templateUrl: '/partials/single-post',
         controller: 'ContentController',
         controllerAs: 'conteudo'
       })
@@ -41,13 +41,28 @@
     });
 
 
+/*
+console.log($routeParams);
+       $scope.identidade = $routeParams.id;
+    
+    $http.get('/api/posts').success(function(data){            
+            $scope.post = data.posts;
+            console.log($scope.post[0].title);
+        });
+
+    }]);
+
+*/
+
     app.controller('ContentController',['$scope','$http','$routeParams', function ($scope, $http, $routeParams){
        
-    $http.get('/api/post/' + $routeParams.id).success(function(data) {
-          console.log(data.post.title);
+   //     console.log($routeParams.id);
+
+            $http.get('/api/posts').success(function(data){            
+        
           
 
-          $scope.post = data.post;
+          $scope.post = data.posts[$routeParams.id];
 
     });
 
@@ -66,9 +81,9 @@
 
 */
     
-    app.controller('CategoryController',['$scope', '$http', function($scope,$http){
-       
-       $scope.categoria = 'Esporte';
+    app.controller('CategoryController',['$scope','$http','$routeParams', function ($scope, $http, $routeParams){
+             
+       $scope.categoria = $routeParams.cat;
        
 
         $http.get('/api/posts').success(function(data){            
