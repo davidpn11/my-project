@@ -2,28 +2,29 @@
 		<div class="col-md-8 block-1">
 			<div class="row">
                 <!-- Ultimas noticias -->
-				<div class="col-md-3 b1-aside" >
+				<div class="col-md-3 b1-aside" ng-controller="lastsController as lasts">
 					<h5><span>Últimas Notícias</span></h5>
-					<div class="bla-content" ng-repeat="post in content.posts | limitTo:5">
-						
+					<div class="bla-content" ng-repeat="post in lasts.posts | limitTo:5">
+						<div ng-if="post.id !=lasts.posts.length-1">
 						<span class="cat-default">{{post.category}}</span>
-						<p>Posted on {{post.date}}</p>
-						<h4><a href={{post.link}}>{{post.title}}</a></h4>
+						<p>Postada em {{post.dia}} de {{post.mes}} de {{post.ano}}</p>
+						<h4><a href='/single-post/{{post.id}}'>{{post.title}}</a></h4>
 						<div class="sep"></div>
+						</div>
 					</div>
 					
 				</div>
 				<!--Post Principal (mais recente)-->
-				<div class="col-md-9 block-right">
+				<div class="col-md-9 block-right" ng-controller="lastsController as lasts">
 					<div class="bl-featured-big" >
 						<div class="bl-meta">
-							<span><i class="fa fa-comments-o"></i> {{content.lastpost.comments.length}} Commentários</span><br>
+							<span><i class="fa fa-comments-o"></i> {{lasts.posts[0].comments.length}} Comentários</span><br>
 						</div>
-						<img ng-src={{content.lastpost.image}} class="img-responsive" alt=""/>
+						<img ng-src={{lasts.posts[0].image}} class="img-responsive" alt=""/>
 						<div class="bl-info">
-							<span>{{content.lastpost.category}}</span>
-							<h3><a href="single_post.html">{{content.lastpost.title}} </a></h3>
-							<a class="rmore" href="#">Continue Reading <i class="fa fa-arrow-right"></i></a>
+							<span>{{lasts.posts[0].category}}</span>
+							<h3><a href='/single-post/{{lasts.posts[0].id}}'>{{lasts.posts[0].title}} </a></h3>
+							<a class="rmore" href='/single-post/{{lasts.posts[0].id}}'>Continue lendo <i class="fa fa-arrow-right"></i></a>
 						</div>
 					</div>
 					

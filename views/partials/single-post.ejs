@@ -67,19 +67,19 @@
 								
 								
                         </ul> 
-        <form name="commentForm" ng-controller="CommentController as commentCtrl" ng-submit="commentCtrl.addComment(post)">
+        <form name="commentForm" ng-controller="CommentController">
 
 
                   <!--  Review Form -->
 
                   <fieldset class="form-group">
-                    <input ng-model="commentCtrl.comentario.nome" type="name" class="form-control" placeholder="Nome" title="commentName">
+                    <input ng-model="comentario.nome" type="name" class="form-control" placeholder="Nome" title="commentName">
                   </fieldset>
                   <fieldset class="form-group">
-                      <textarea ng-model="commentCtrl.comentario.body" class="form-control" placeholder="Comentário" title="commentBody"></textarea>
+                      <textarea ng-model="comentario.body" class="form-control" placeholder="Comentário" title="commentBody"></textarea>
                   </fieldset>
                   <fieldset class="form-group">
-                    <input type="submit" class="btn btn-primary pull-right" value="Enviar Comentário" />
+                    <input type="submit" class="btn btn-primary pull-right" value="Enviar Comentário" ng-click="submitComment()" />
                   </fieldset>
                 </form>
                             

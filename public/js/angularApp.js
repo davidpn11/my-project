@@ -71,16 +71,7 @@ console.log($routeParams);
 
  
 
-/*
- console.log($scope.products[0].subtitle);
-            console.log($scope.products[0].image);
-            console.log($scope.products[0].dia);
-            console.log($scope.products[0].mes);
-            console.log($scope.products[0].author);
-            console.log($scope.products[0].dia);
-            console.log($scope.products[0].ano);
 
-*/
     
     app.controller('CategoryController',['$scope','$http','$routeParams', function ($scope, $http, $routeParams){
              
@@ -92,15 +83,7 @@ console.log($routeParams);
          //console.log($scope.postagens[0].comments[0]);
         
         });
-       /* console.log('nada');
-        this.postsCategoria = singlePost;
-        this.categoria = "Tecnologia";
-        
-        this.setCat = function(novo){
-            this.categoria = novo;            
-            console.log(this.categoria);
-        };    */
-    
+           
     }]);
     
     
@@ -108,14 +91,42 @@ console.log($routeParams);
     
     
     
-    app.controller('CommentController',function(){
-        this.comentario = {};
+    app.controller('CommentController',['$scope', '$http','$location', function($scope,$http,$location){
+        $scope.comentario = {};
     
-        this.addComment = function(post){
-            post.comments.push(this.comentario);           
-            this.comentario = {};
-        };
-    });
+        $scope.submitComment = function () {
+    $http.post('/api/post', $scope.comentario).success(function(data) {
+            $location.path('/');
+      });
+  };
+    }]);
+
+
+    app.controller('lastsController', ['$filter', '$http', function($filter,$http){
+        var orderBy = $filter('orderBy');
+        var lasts = this;
+        lasts.posts = [];
+        $http.get('/api/posts').success(function(data){            
+  
+            lasts.posts = data.posts;
+            lasts.posts = orderBy(lasts.posts,'-id', false);
+            //console.log('id:'+lasts.posts[0].id);
+        });
+
+    }]);
+
+    app.controller('ultimoController', ['$filter', '$http', function($filter,$http){
+        var orderBy = $filter('orderBy');
+        var lasts = this;
+        lasts.posts = [];
+        $http.get('/api/posts').success(function(data){            
+  
+            lasts.posts = data.posts;
+            lasts.posts = orderBy(lasts.posts,'-id', false);
+            //console.log('id:'+lasts.posts[0].id);
+        });
+
+    }]);
     
     app.controller('viewsController', ['$filter', '$http', function($filter,$http){
         var orderBy = $filter('orderBy');
@@ -141,13 +152,7 @@ console.log($routeParams);
             popular.posts = data.posts;
             popular.posts = orderBy(popular.posts,'-comments.length', false);
             //console.log('views:'+destaque.posts[0].image);
-        });
-
-
-     /*   var orderBy = $filter('orderBy');
-        this.posts = singlePost;
-        this.posts = orderBy(this.posts, '-comments.length', false);
-       */ 
+        });    
     }]);
 
 
