@@ -63,6 +63,7 @@ console.log($routeParams);
           
 
           $scope.post = data.posts[$routeParams.id];
+        //  console.log('content:'+$scope.post.image);
 
     });
 
@@ -88,7 +89,8 @@ console.log($routeParams);
 
         $http.get('/api/posts').success(function(data){            
             $scope.postagens = data.posts;
-  //          console.log($scope.products[0].title);
+         console.log($scope.postagens[0].title);
+         console.log($scope.postagens[0].image);
         });
        /* console.log('nada');
         this.postsCategoria = singlePost;
@@ -123,6 +125,7 @@ console.log($routeParams);
   
             destaque.posts = data.posts;
             destaque.posts = orderBy(destaque.posts,'-views', false);
+            console.log('views:'+destaque.posts[0].image);
         });
 
         
