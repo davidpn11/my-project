@@ -46,7 +46,7 @@
 			</div>
 			
 			
-			<!-- Comments --> <!--
+			<!-- Comments --> 
 			<div class="comments-wrap">
 				<div id="tabwrap">
 					<ul id="tabs">
@@ -55,9 +55,9 @@
 					
 					<div id="content">
 						<div id="comments" class="current">
-							<ul class="comments" ng-repeat="comentario in atual.comments">
+							<ul class="comments" ng-repeat="comentario in post.comments">
 								<li>
-									<div class="c-img"><img src="images/profile.png" width="80px" alt=""/></div>
+									<div class="c-img"><img src="/images/profile.png" width="80px" alt=""/></div>
 									<div class="comment-inner" >
 										<h6><span>{{comentario.nome}}</span> </h6>
 										
@@ -66,12 +66,12 @@
 								</li>
 								
 								
-                        </ul> <!--
-        <form name="commentForm" ng-controller="CommentController as commentCtrl" ng-submit="commentCtrl.addComment(atual)">
+                        </ul> 
+        <form name="commentForm" ng-controller="CommentController as commentCtrl" ng-submit="commentCtrl.addComment(post)">
 
 
                   <!--  Review Form -->
-<!--
+
                   <fieldset class="form-group">
                     <input ng-model="commentCtrl.comentario.nome" type="name" class="form-control" placeholder="Nome" title="commentName">
                   </fieldset>

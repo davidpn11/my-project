@@ -40,7 +40,11 @@ var data = {
                 {
                 "nome":"David Pena",
                 "hora":"",
-                "body":"Colé"}
+                "body":"Colé"},
+                {
+                "nome":"Cruzeirense",
+                "hora":"",
+                "body":"É o melhor time do Brasil"}
             ],
             "author": "John Smith",
             "dia":"16",
@@ -88,7 +92,11 @@ var data = {
                 {
                 "nome":"David Pena",
                 "hora":"",
-                "body":"Colé"}
+                "body":"Colé"},
+                {
+                "nome":"Paulin",
+                "hora":"",
+                "body":"Muito triste. #chateado"}
             ],
             "author": "G1",
             "dia":"21",
@@ -118,7 +126,8 @@ exports.posts = function (req, res) {
       mes: post.mes,
       ano: post.ano,
       link: post.link,
-      views: post.views
+      views: post.views,
+      comments: post.comments
     });
   });
   res.json({

@@ -89,8 +89,9 @@ console.log($routeParams);
 
         $http.get('/api/posts').success(function(data){            
             $scope.postagens = data.posts;
-         console.log($scope.postagens[0].title);
-         console.log($scope.postagens[0].image);
+         //console.log($scope.postagens[0].comments[0]);
+         console.log($scope.postagens[0].comments[1].nome);
+        console.log($scope.postagens[0].comments[1].body);
         });
        /* console.log('nada');
         this.postsCategoria = singlePost;
@@ -125,14 +126,25 @@ console.log($routeParams);
   
             destaque.posts = data.posts;
             destaque.posts = orderBy(destaque.posts,'-views', false);
-            console.log('views:'+destaque.posts[0].image);
+            //console.log('views:'+destaque.posts[0].image);
         });
 
         
         
     }]);
     
-    app.controller('popularController', ['$filter', function ($filter){
+    app.controller('popularController', ['$filter', '$http', function($filter,$http){
+        var orderBy = $filter('orderBy');
+        var popular = this;
+        popular.posts = [];
+        $http.get('/api/posts').success(function(data){            
+  
+            popular.posts = data.posts;
+            popular.posts = orderBy(popular.posts,'-comments.length', false);
+            //console.log('views:'+destaque.posts[0].image);
+        });
+
+
      /*   var orderBy = $filter('orderBy');
         this.posts = singlePost;
         this.posts = orderBy(this.posts, '-comments.length', false);
