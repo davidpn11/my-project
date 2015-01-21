@@ -90,8 +90,7 @@ console.log($routeParams);
         $http.get('/api/posts').success(function(data){            
             $scope.postagens = data.posts;
          //console.log($scope.postagens[0].comments[0]);
-         console.log($scope.postagens[0].comments[1].nome);
-        console.log($scope.postagens[0].comments[1].body);
+        
         });
        /* console.log('nada');
         this.postsCategoria = singlePost;

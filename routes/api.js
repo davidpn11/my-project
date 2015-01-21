@@ -42,9 +42,10 @@ var data = {
                 "hora":"",
                 "body":"Colé"},
                 {
-                "nome":"Cruzeirense",
+                "nome":"Troll da net",
                 "hora":"",
-                "body":"É o melhor time do Brasil"}
+                "body":"LOL sucks. Bom é DOTA"},
+              
             ],
             "author": "John Smith",
             "dia":"16",
@@ -68,7 +69,11 @@ var data = {
                 {
                 "nome":"David Pena",
                 "hora":"",
-                "body":"Colé"}
+                "body":"Colé"},
+                {
+                "nome":"Cruzeirense",
+                "hora":"",
+                "body":"É o melhor time do Brasil"}
             ],
             "author": "John Smith",
             "dia":"4",
@@ -146,13 +151,13 @@ exports.post = function (req, res) {
     res.json(false);
   }
 };
-/*
+
 // POST
 exports.addPost = function (req, res) {
   data.posts.push(req.body);
   res.json(req.body);
 };
-
+/*
 // PUT
 exports.editPost = function (req, res) {
   var id = req.params.id;
