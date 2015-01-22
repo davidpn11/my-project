@@ -144,6 +144,7 @@ exports.post = function (req, res) {
   
   var id = req.params.id;
   if (id >= 0 && id < data.posts.length) {
+    //data.posts[id].views = data.posts[id].views + 1;
     res.json({
       post: data.posts[id]
     });
@@ -151,6 +152,8 @@ exports.post = function (req, res) {
     res.json(false);
   }
 };
+
+
 
 // POST
 exports.addPost = function (req, res) {
