@@ -58,7 +58,7 @@ console.log($routeParams);
        
    //     console.log($routeParams.id);
 
-            $http.get('/api/posts').success(function(data){            
+            $http.get('/data').success(function(data){            
         
           
 
@@ -78,7 +78,7 @@ console.log($routeParams);
        $scope.categoria = $routeParams.cat;
        
 
-        $http.get('/api/posts').success(function(data){            
+        $http.get('/data').success(function(data){            
             $scope.postagens = data.posts;
          //console.log($scope.postagens[0].comments[0]);
         
@@ -95,7 +95,7 @@ console.log($routeParams);
         $scope.comentario = {};
     
         $scope.submitComment = function () {
-    $http.post('/api/post', $scope.comentario).success(function(data) {
+    $http.post('/data', $scope.comentario).success(function(data) {
             $location.path('/');
       });
   };
@@ -106,7 +106,7 @@ console.log($routeParams);
         var orderBy = $filter('orderBy');
         var lasts = this;
         lasts.posts = [];
-        $http.get('/api/posts').success(function(data){            
+        $http.get('/data').success(function(data){            
   
             lasts.posts = data.posts;
             lasts.posts = orderBy(lasts.posts,'-id', false);
@@ -115,24 +115,12 @@ console.log($routeParams);
 
     }]);
 
-    app.controller('ultimoController', ['$filter', '$http', function($filter,$http){
-        var orderBy = $filter('orderBy');
-        var lasts = this;
-        lasts.posts = [];
-        $http.get('/api/posts').success(function(data){            
-  
-            lasts.posts = data.posts;
-            lasts.posts = orderBy(lasts.posts,'-id', false);
-            //console.log('id:'+lasts.posts[0].id);
-        });
-
-    }]);
     
     app.controller('viewsController', ['$filter', '$http', function($filter,$http){
         var orderBy = $filter('orderBy');
         var destaque = this;
         destaque.posts = [];
-        $http.get('/api/posts').success(function(data){            
+        $http.get('/data').success(function(data){            
   
             destaque.posts = data.posts;
             destaque.posts = orderBy(destaque.posts,'-views', false);
@@ -147,7 +135,7 @@ console.log($routeParams);
         var orderBy = $filter('orderBy');
         var popular = this;
         popular.posts = [];
-        $http.get('/api/posts').success(function(data){            
+        $http.get('/data').success(function(data){            
   
             popular.posts = data.posts;
             popular.posts = orderBy(popular.posts,'-comments.length', false);

@@ -13,6 +13,11 @@ var express = require('express'),
   http = require('http'),
   path = require('path');
 
+var fs = require('fs');
+var read= fs.readFileSync('data/api.json');
+var buf = JSON.parse(read);
+
+
 var app = module.exports = express();
 
 
@@ -40,6 +45,9 @@ app.get('/', routes.index);
 app.get('/partials/:name', routes.partials);
 
 // JSON API
+app.get('/data', function(req,res){
+    res.json(buf);
+});
 
 app.get('/api/posts', api.posts);
 
