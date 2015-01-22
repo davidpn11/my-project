@@ -96,13 +96,16 @@ console.log($routeParams);
         $scope.comentario = {};
     
         $scope.submitComment = function () {
-    $http.post('/data', $scope.comentario).success(function(data) {
-
+    $http.post('/data', $scope.comentario)
+    .success(function(data) {
+        console.log($scope.comentario);
         $scope.comentario = {};        
-        
+    });
+        };
         $scope.submitComment = function (id) {
     console.log(id);
-    $http.post('/api/post', $scope.comentario).success(function(data) {
+    $http.post('/api/post', $scope.comentario)
+    .success(function(data) {
             
         //data.posts[id].push($scope.comentario);
 
