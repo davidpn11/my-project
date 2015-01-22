@@ -92,10 +92,20 @@ console.log($routeParams);
     
     
     app.controller('CommentController',['$scope', '$http','$location', function($scope,$http,$location){
+
         $scope.comentario = {};
     
         $scope.submitComment = function () {
     $http.post('/data', $scope.comentario).success(function(data) {
+
+        $scope.comentario = {};        
+        
+        $scope.submitComment = function (id) {
+    console.log(id);
+    $http.post('/api/post', $scope.comentario).success(function(data) {
+            
+        //data.posts[id].push($scope.comentario);
+
             $location.path('/');
       });
   };
