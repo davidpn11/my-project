@@ -94,24 +94,23 @@ console.log($routeParams);
     app.controller('CommentController',['$scope', '$http','$location', function($scope,$http,$location){
 
         $scope.comentario = {};
-    
-        $scope.submitComment = function () {
-    $http.post('/data', $scope.comentario)
-    .success(function(data) {
-        console.log($scope.comentario);
-        $scope.comentario = {};        
-    });
-        };
-        $scope.submitComment = function (id) {
-    console.log(id);
-    $http.post('/api/post', $scope.comentario)
-    .success(function(data) {
-            
-        //data.posts[id].push($scope.comentario);
+        
+       
+                $scope.submitComment = function (post) {    
+                    post.comments.push($scope.comentario);
+                    $http.post('/data', $scope.comentario).success(function(data, status, headers, config) {
 
-            $location.path('/');
-      });
-  };
+                       $scope.message = data.posts[post.id].comments;
+                       $location.path('/data/api.json.posts.comments');
+                       $scope.comentario = {};
+                     });
+         
+                
+
+                 };
+
+      
+ 
     }]);
 
 
