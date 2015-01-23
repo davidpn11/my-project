@@ -49,6 +49,10 @@ app.get('/data', function(req,res){
     res.json(buf);
 });
 
+app.post('/data', function(req,res){
+    res.json(buf);
+});
+
 app.get('/api/posts', api.posts);
 
 app.get('/api/post/:id', api.post);
