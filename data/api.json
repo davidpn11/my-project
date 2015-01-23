@@ -108,6 +108,79 @@
             "ano":"2015",
             "link": "/post",
             "views": 4
+        },
+        {
+            "id": 4,
+            "title": "Após dizer que jogaria por Corinthians e Flamengo, Cristiano Ronaldo fecha com o Palmeiras",
+            "subtitle": "Inacreditável",
+            "body": "Senhoras e senhores, o #MattosFacts está de volta. Depois de chapelar o São Paulo, você e mais 44 pessoas, o Palmeiras chapelou um clube gigante e o Corinthians e o Flamengo. Após Cristiano Ronaldo dizer que jogaria por Timão e Mengão, Alexandre Mattos se viu na obrigação de dar um chapéu nos rivais e acertou com o astro português, tirando-o do Real Madrid. O atleta deve chegar até sábado na academia de futebol para realizar exames e finalmente fazer dupla com Messi.    “Foi tudo por acaso. Eu contratei um jornal de manhã e li que o Cristiano Ronaldo se mostrou disposto a jogar no Brasil. Depois de contratar o jornalista que escreveu a matéria, decidi contratar o Cristiano Ronaldo também”, disse Mittos.   Devido à complexidade da operação, esta foi uma das negociações mais longas de Mattos. Foram 17 minutos com Cristiano Ronaldo e seus agentes.",
+            "image":"/images/blog/cristiano.jpg",            
+            "imageSpan":"CR7 chega para disputar posição com Maikon Leite",
+            "category": "Esporte",
+            "comments": [{
+                "nome":"Mattos",
+                "hora":"19:00",
+                "body":"Depois de contratar o Fake.com fiz essa publicação"},
+                {
+                "nome":"CR7",
+                "hora":"19:01",
+                "body":"Ora pois, ele fez uma proposta irrecusável"}
+                
+            ],
+            "author": "Olé do Brasil",
+            "dia":"21",
+            "mes":"Janeiro",
+            "ano":"2015",
+            "link": "/post",
+            "views": 10
+        },
+      {
+            "id": 5,
+            "title": "Prova de resistência: BBBs terão que ouvir álbum inteiro da Banda do Mar",
+            "subtitle": "BBBosta",
+            "body": "A primeira prova de resistência do BBB promete testar os limites dos participantes. Na prova, cada participante receberá um fone de ouvido e terá que ouvir o álbum da Banda do Mar. A direção não acredita que haja vencedores, pois dificilmente alguém agüentará ouvir todo o disco..",
+            "image":"/images/blog/bmar.jpg",            
+            "imageSpan":"Quem são esses?",
+            "category": "Entretenimento",
+            "comments": [{
+                "nome":"Cassylleny Maria dos Santos da Rocha Silva Pinto Pereira Ferreira ",
+                "hora":"16:00",
+                "body":"Addooorrooo BBB, assisto todos os dias."}
+                
+                
+            ],
+            "author": "Sensacionalista",
+            "dia":"22",
+            "mes":"Janeiro",
+            "ano":"2015",
+            "link": "/post",
+            "views": 8
+        },
+      {
+            "id": 6,
+            "title": "Papa Francisco declara: “DotA é muito melhor que LoL”",
+            "subtitle": "Opinião muito importante do Papa",
+            "body": "O Papa Francisco veio a público expressar mais uma opinião importante que pode mudar a história da humanidade. Segundo ele, DotA (Defense of the Ancients) é muito superior a (LoL). Vossa Santidade disse que consegue farmar bem no DotA 2, mesmo sendo mais difícil que em LoL (que é um jogo muito facinho, de freiras). Ele falou de sua sacada no Vaticano: “Em DotA 2, o inimigo pode negar os seus minions!” e eu curto isso.  Repórteres entrevistaram Papa Francisco enquanto ele jogava: “aprendam uma coisa, em DotA 2 as torres focam o inimigo mais próximo, independentemente de ser player ou não no alcance.”, “Eu gosto de coisas bem acabadas”, disse Papa Francisco, “LoL é uma imitação fajuta de Warcraft 3″.",
+            "image":"/images/blog/pope.jpg",            
+            "imageSpan":"Papa Franchesco",
+            "category": "Cultura",
+            "comments": [{
+                "nome":"xDzinx",
+                "hora":"15:00",
+                "body":"Ja zerei os dois HUEHUEHUE"},
+                {
+                "nome":"LolZero",
+                "hora":"15:00",
+                "body":"O Papa é pop... ahahahah #oldbutgold"}
+                
+                
+            ],
+            "author": "Sensacionalista",
+            "dia":"5",
+            "mes":"Dezembro",
+            "ano":"2014",
+            "link": "/post",
+            "views": 7
         }
     ]
 }
